@@ -20,6 +20,9 @@ import {
   PIZZA_DELETE_FAIL,
   PIZZA_DELETE_SUCCESS,
 
+  PIZZA_AVIS_CREATE_REQUEST,
+  PIZZA_AVIS_CREATE_SUCCESS,
+  PIZZA_AVIS_CREATE_FAIL,
 } from '../constants/pizza';
 
 export const listPizzas = () => async (dispatch) => {
@@ -115,5 +118,35 @@ export const deletePizza = (pizzaId) => async (dispatch, getState) => {
         ? error.response.data.message
         : error.message;
     dispatch({ type: PIZZA_DELETE_FAIL, payload: message });
+  }
+};
+
+
+export const createAvis = (pizzaId, avis) => async (
+  dispatch,
+  getState
+) => {
+  dispatch({ type: PIZZA_AVIS_CREATE_REQUEST });
+  const {
+    userConnexion: { userInfo },
+  } = getState();
+  try {
+    const { data } = await Axios.post(
+      `/api/pizzas/${pizzaId}/avis`,
+      avis,
+      {
+        headers: { Authorization: `Bearer ${userInfo.token}` },
+      }
+    );
+    dispatch({
+      type: PIZZA_AVIS_CREATE_SUCCESS,
+      payload: data.avis,
+    });
+  } catch (error) {
+    const message =
+      error.response && error.response.data.message
+        ? error.response.data.message
+        : error.message;
+    dispatch({ type: PIZZA_AVIS_CREATE_FAIL, payload: message });
   }
 };
