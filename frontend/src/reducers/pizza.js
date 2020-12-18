@@ -22,7 +22,10 @@ const {
     PIZZA_DELETE_FAIL,
     PIZZA_DELETE_RESET,
 
-
+    PIZZA_AVIS_CREATE_REQUEST,
+    PIZZA_AVIS_CREATE_SUCCESS,
+    PIZZA_AVIS_CREATE_FAIL,
+    PIZZA_AVIS_CREATE_RESET,
   } = require('../constants/pizza');
   
   export const pizzaListReducer = (
@@ -96,6 +99,22 @@ export const pizzaDeleteReducer = (state = {}, action) => {
     case PIZZA_DELETE_FAIL:
       return { loading: false, error: action.payload };
     case PIZZA_DELETE_RESET:
+      return {};
+    default:
+      return state;
+  }
+};
+
+
+export const pizzaAvisCreateReducer = (state = {}, action) => {
+  switch (action.type) {
+    case PIZZA_AVIS_CREATE_REQUEST:
+      return { loading: true };
+    case PIZZA_AVIS_CREATE_SUCCESS:
+      return { loading: false, success: true, review: action.payload };
+    case PIZZA_AVIS_CREATE_FAIL:
+      return { loading: false, error: action.payload };
+    case PIZZA_AVIS_CREATE_RESET:
       return {};
     default:
       return state;
