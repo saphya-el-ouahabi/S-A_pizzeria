@@ -16,6 +16,7 @@ import {
   pizzaCreateReducer,
   pizzaUpdateReducer,
   pizzaDeleteReducer,
+  pizzaAvisCreateReducer,
 } from './reducers/pizza';
 
 import {
@@ -69,6 +70,7 @@ const reducer = combineReducers({
   userList: userListReducer,
   userDelete: userDeleteReducer,
   userUpdate: userUpdateReducer,
+  pizzaAvisCreate: pizzaAvisCreateReducer,
 });
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
