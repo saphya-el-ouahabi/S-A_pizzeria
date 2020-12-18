@@ -141,28 +141,32 @@ export default function PizzaScreen(props) {
 
 
 
-                    <div>
-                          <h2 id="avis">Avis</h2>
+                    <div> <div className='text-blanc'>
+                          <h3 id="avis">Avis</h3></div>
                           {pizza.avis.length === 0 && (
                             <MessageBox>Il n'y a pas encore d'avis </MessageBox>
                           )}
                           <ul>
                             {pizza.avis.map((avis) => (
                               <li key={avis._id}>
-                                <strong>{avis.nom}</strong>
+                                <div className="text-blanc">
+                                <strong>{avis.nom}</strong></div>
                                 <Note note={avis.note} caption=" "></Note>
+                                <div className='text-blanc'>
                                 <p>{avis.createdAt.substring(0, 10)}</p>
                                 <p>{avis.comment}</p>
+                                </div>
                               </li>
                             ))}
                             <li>
                               {userInfo ? (
                                 <form className="form" onSubmit={submitHandler}>
-                                  <div>
-                                    <h2>Ecrire un commentaire</h2>
+                                  <div className='text-blanc'>
+                                    <h3>Ecrire un commentaire</h3>
                                   </div>
                                   <div>
-                                    <label htmlFor="note">Note</label>
+                                    <div className='text-blanc'>
+                                    <label htmlFor="note">Note</label></div>
                                     <select
                                       id="note"
                                       value={note}
@@ -176,7 +180,7 @@ export default function PizzaScreen(props) {
                                       <option value="5">5- Woah ! </option>
                                     </select>
                                   </div>
-                                  <div>
+                                  <div className='text-blanc'>
                                     <label htmlFor="comment">Commentaire </label>
                                     <textarea
                                       id="comment"

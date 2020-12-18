@@ -46,8 +46,8 @@ export default function UserListScreen(props) {
         <table className="table-history">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>NAME</th>
+              <th>IDENTIFIANT</th>
+              <th>NOM</th>
               <th>EMAIL</th>
               <th>ADMIN</th>
               <th>ACTIONS</th>
@@ -59,7 +59,7 @@ export default function UserListScreen(props) {
                 <td>{user._id}</td>
                 <td>{user.nom}</td>
                 <td>{user.email}</td>
-                <td>{user.isAdmin ? 'YES' : 'NO'}</td>
+                <td>{user.isAdmin ? 'Oui' : 'Non'}</td>
                 <td>
                   <button
                     type="button"

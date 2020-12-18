@@ -41,11 +41,11 @@ export default function CommandeListScreen(props) {
       <table className="table-history">          
       <thead>
             <tr>
-              <th>ID</th>
+              <th>Identifiant</th>
               <th>DATE</th>
               <th>TOTAL</th>
-              <th>PAID</th>
-              <th>DELIVERED</th>
+              <th>PAYE</th>
+              <th>LIVRE</th>
               <th>ACTIONS</th>
             </tr>
       </thead>
@@ -55,11 +55,11 @@ export default function CommandeListScreen(props) {
                 <td>{order._id}</td>
                 <td>{order.createdAt.substring(0, 10)}</td>
                 <td>{order.totalPrix}</td>
-                <td>{order.isPaid ? order.paidAt.substring(0, 10) : 'No'}</td>
+                <td>{order.isPaid ? order.paidAt.substring(0, 10) : 'Oui'}</td>
                 <td>
                   {order.isDelivered
                     ? order.deliveredAt.substring(0, 10)
-                    : 'No'}
+                    : 'Non'}
                 </td>
                 <td>
                   <button
