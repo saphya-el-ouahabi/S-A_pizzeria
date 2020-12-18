@@ -38,14 +38,14 @@ export default function  InscriptionScreen(props) {
   return (
     <div>
       <form className="form" onSubmit={submitHandler}>
-        <div>
+      <div className='text-blanc'>
           <h1>Inscription</h1>
         </div>
 
         {loading && <LoadingBox></LoadingBox>}
         {error && <MessageBox variant="danger">{error}</MessageBox>}
        
-        <div>
+        <div className='text-blanc'>
           <label htmlFor="email">Nom</label>
           <input
             type="text"
@@ -57,7 +57,7 @@ export default function  InscriptionScreen(props) {
         </div>
 
 
-        <div>
+        <div className='text-blanc'>
           <label htmlFor="email">Email</label>
           <input
             type="email"
@@ -67,7 +67,8 @@ export default function  InscriptionScreen(props) {
             onChange={(e) => setEmail(e.target.value)}
           ></input>
         </div>
-        <div>
+
+        <div className='text-blanc'>
           <label htmlFor="mdp">Mot de passe</label>
           <input
             type="password"
@@ -77,16 +78,18 @@ export default function  InscriptionScreen(props) {
             onChange={(e) => setMdp(e.target.value)}
           ></input>
         </div>
+
         <div>
           <label />
           <button className="premier" type="submit">
             Inscription
           </button>
         </div>
+
         <div>
           <label />
-          <div>
-            Vous avez déjà un compte chez nous ?  <Link to="/connexion">Connexion</Link>
+          <div className='text-blanc'>
+            Vous avez déjà un compte chez nous ?  <Link to="/connexion" style={{textDecoration : 'none', color:'coral'}} >Connexion</Link>
           </div>
         </div>
       </form>

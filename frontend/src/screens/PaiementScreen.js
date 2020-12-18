@@ -20,12 +20,12 @@ export default function PaiementScreen(props) {
     <div>
       <CommandeSteps step1 step2 step3></CommandeSteps>
       <form className="form" onSubmit={submitHandler}>
-        <div>
+      <div className='text-blanc'>
           <h1>Paiement</h1>
         </div>
 
         <div>
-          <div>
+          <div className='text-blanc'>
             <input
               type="radio"
               id="paypal"
@@ -40,7 +40,7 @@ export default function PaiementScreen(props) {
         </div>
 
 
-        <div>
+        <div className='text-blanc'>
           <div>
             <input
               type="radio"

@@ -41,7 +41,7 @@ return (<div>
     <img src="./images/pexels-eneida-nieves-905847.jpg" alt=""></img>
   
   
-</Carousel>
+      </Carousel>
     
   </div>
 );

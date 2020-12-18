@@ -48,9 +48,9 @@ export default function UserScreen() {
   return (
     <div>
       <form className="form" onSubmit={submitHandler}>
-        <div>
+      <div className='text-blanc'>
           <h1>Profil</h1>
-        </div>
+      </div>
         {loading ? (
           <LoadingBox></LoadingBox>
         ) : error ? (
@@ -69,7 +69,7 @@ export default function UserScreen() {
             )}
 
 
-            <div>
+            <div className='text-blanc'>
               <label htmlFor="nom">Nom</label>
               <input
                 id="nom"
@@ -80,7 +80,7 @@ export default function UserScreen() {
               ></input>
             </div>
 
-            <div>
+            <div className='text-blanc'>
               <label htmlFor="email">Email</label>
               <input
                 id="email"
@@ -91,21 +91,21 @@ export default function UserScreen() {
               ></input>
             </div>
 
-            <div>
+            <div className='text-blanc'>
               <label htmlFor="mdp">Mot de passe</label>
               <input
                 id="mdp"
-                type="mdp"
+                type="password"
                 placeholder="Entrez votre mot de passe"
                 onChange={(e) => setMdp(e.target.value)}
               ></input>
             </div>
 
-            <div>
+            <div className='text-blanc'>
               <label htmlFor="confirmMdp">Confirmer</label>
               <input
                 id="confirmMdp"
-                type="mdp"
+                type="password"
                 placeholder="Confirmez votre mot de passe"
                 onChange={(e) => setConfirmMdp(e.target.value)}
               ></input>

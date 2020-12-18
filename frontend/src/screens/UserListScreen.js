@@ -31,7 +31,7 @@ export default function UserListScreen(props) {
 
   return (
     <div>
-      <h1>Utilisateurs</h1>
+      <div className="text-blanc-h">Utilisateurs</div>
       {loadingDelete && <LoadingBox></LoadingBox>}
       {errorDelete && <MessageBox variant="danger">{errorDelete}</MessageBox>}
       {successDelete && (
@@ -43,7 +43,7 @@ export default function UserListScreen(props) {
       ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
-        <table className="table">
+        <table className="table-history">
           <thead>
             <tr>
               <th>ID</th>

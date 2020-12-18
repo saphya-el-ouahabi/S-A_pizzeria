@@ -69,11 +69,11 @@ export default function PizzaScreen(props) {
         <div>
             <div className="row top">
 
-                <div className="col-2">
-                    <img className="large" src={pizza.image} alt={pizza.nom}></img>
+            <div className="col-2-pizza">                    
+            <img className="large" src={pizza.image} alt={pizza.nom}></img>
                 </div>
 
-                <div className="col-1">
+                <div className="col-1-pizza">
                     <ul>
                         <li>
                             <h1>{pizza.nom}</h1>
@@ -88,7 +88,7 @@ export default function PizzaScreen(props) {
 
                 </div>
 
-                <div className="col-1">
+                <div className="col-1-pizza">
                     <div className="panier panier-body">
                         <ul>
                             <li>
@@ -99,7 +99,7 @@ export default function PizzaScreen(props) {
                             </li>
 
                             <li>
-                                <div className="row">
+                                <div className="row-pizza">
                                     <div> Disponibilité: </div> 
                                     <div> 
                                     {pizza.stock>0? (
@@ -115,7 +115,7 @@ export default function PizzaScreen(props) {
                                 <>
                                 <li>
                                   <div className="row">
-                                    <div> Qty </div>
+                                    <div> Quantité </div>
                                     <div>                                      
                                       <select value={qty} onChange={e => setQty(e.target.value)}> 
                                         {

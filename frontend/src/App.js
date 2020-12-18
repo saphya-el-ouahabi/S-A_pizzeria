@@ -18,7 +18,7 @@ import AdminRoute from './components/AdminRoute';
 import PizzaListScreen from './screens/PizzaListScreen';
 import PizzaEditScreen from './screens/PizzaEditScreen';
 import CommandeListScreen from './screens/CommandeListScreen';
-import ContactScreen from './screens/ContactScreen';
+import HistoireScreen from './screens/HistoireScreen';
 import CarteScreen from './screens/CarteScreen';
 import UserListScreen from './screens/UserListScreen';
 import UserEditScreen from './screens/UserEditScreen';
@@ -41,13 +41,13 @@ function App() {
       <BrowserRouter> 
     <div className="grid-container">
     <header className="row">
-        <div>
+        <div className='titre'>
             <Link className="entreprise" to="/"> S&A_pizzeria</Link>
         </div>
 
         <div>
           <Link to="/carte">Carte</Link>
-          <Link to="/contact">Contact</Link>
+          <Link to="/histoire">Qui sommes-nous ? </Link>
             <Link to="/panier"> Panier
                 {panierItems.length > 0 && (
                     <span className="badge"> 
@@ -106,7 +106,7 @@ function App() {
     <main>
       
         <Route path='/carte' component={CarteScreen}></Route>
-        <Route path='/contact' component={ContactScreen}></Route>
+        <Route path='/histoire' component={HistoireScreen}></Route>
         <Route path='/panier/:id?' component={PanierScreen}></Route>
         <Route path='/pizza/:id' component={PizzaScreen} exact></Route>
         <Route path="/pizza/:id/edit" component={PizzaEditScreen} exact></Route>
@@ -126,12 +126,15 @@ function App() {
 
     </main>
     <footer> 
-      5 chemin de l'étoile 74940 Annecy-le-Vieux <br/>
-      E-mail : saPizzeria@gmail.com
-      <div className="row center">
-        @2020-Saphya El Ouahabi & Anaïs Ferrera / INFO734 Polytech Annecy-Chambery 
-       </div> 
-       
+      <div className='footer-txt'>
+        <span>Téléphone : </span> 06 06 06 06 06 <br/> 
+        <span>Adresse : </span>5 chemin de l'étoile  74940 Annecy-le-Vieux <br/> 
+        <span>E-mail : </span> saPizzeria@gmail.com 
+        <div className="footer-center">
+          @2020-Saphya El Ouahabi & Anaïs Ferrera / INFO734 Polytech Annecy-Chambery 
+        </div> 
+       </div>
+
     </footer>
   
 

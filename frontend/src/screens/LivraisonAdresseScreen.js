@@ -29,11 +29,11 @@ export default function LivraisonAdresseScreen(props) {
     <div>
       <CommandeSteps step1 step2></CommandeSteps>
       <form className="form" onSubmit={submitHandler}>
-        <div>
+      <div className='text-blanc'>
           <h1>Adresse de livraison</h1>
         </div>
 
-        <div>
+        <div className='text-blanc'>
           <label htmlFor="nom">Nom</label>
           <input
             type="text"
@@ -45,7 +45,7 @@ export default function LivraisonAdresseScreen(props) {
           ></input>
         </div>
 
-        <div>
+        <div className='text-blanc'>
           <label htmlFor="prenom">Prenom</label>
           <input
             type="text"
@@ -57,7 +57,7 @@ export default function LivraisonAdresseScreen(props) {
           ></input>
         </div>
 
-        <div>
+        <div className='text-blanc'>
           <label htmlFor="adresse">Adresse</label>
           <input
             type="text"
@@ -69,7 +69,7 @@ export default function LivraisonAdresseScreen(props) {
           ></input>
         </div>
 
-        <div>
+        <div className='text-blanc'>
           <label htmlFor="ville">Ville</label>
           <input
             type="text"
@@ -81,7 +81,7 @@ export default function LivraisonAdresseScreen(props) {
           ></input>
         </div>
 
-        <div>
+        <div className='text-blanc'>
           <label htmlFor="codePostal">Postal Code</label>
           <input
             type="text"
@@ -99,6 +99,7 @@ export default function LivraisonAdresseScreen(props) {
             Continuer
           </button>
         </div>
+        
       </form>
     </div>
   );

@@ -37,13 +37,14 @@ export default function  ConnexionScreen(props) {
     <div>
       <form className="form" onSubmit={submitHandler}>
         <div>
+        <div className='text-blanc'>
           <h1>Connexion</h1>
-        </div>
+        </div>        </div>
 
         {loading && <LoadingBox></LoadingBox>}
         {error && <MessageBox variant="danger">{error}</MessageBox>}
 
-        <div>
+        <div className='text-blanc'>
           <label htmlFor="email">Email</label>
           <input
             type="email"
@@ -53,7 +54,8 @@ export default function  ConnexionScreen(props) {
             onChange={(e) => setEmail(e.target.value)}
           ></input>
         </div>
-        <div>
+
+        <div className='text-blanc'>
           <label htmlFor="mdp">Mot de passe</label>
           <input
             type="password"
@@ -63,17 +65,19 @@ export default function  ConnexionScreen(props) {
             onChange={(e) => setMdp(e.target.value)}
           ></input>
         </div>
+
         <div>
           <label />
           <button className="premier" type="submit">
             Connexion
           </button>
         </div>
+
         <div>
           <label />
-          <div>
+          <div className='text-blanc'>
               Nouveau client ?{' '}
-              <Link to={`/inscription?redirect=${redirect}`}>
+              <Link to={`/inscription?redirect=${redirect}`}style={{textDecoration : 'none', color:'coral'}}>
               Créer un compte 
             </Link>
 

@@ -13,7 +13,6 @@ export default function CommandeScreen(props) {
     props.history.push('/payment');
   }
 
-
   const orderCreate = useSelector((state) => state.orderCreate);
   const { loading, success, error, order } = orderCreate;
 
@@ -57,7 +56,7 @@ export default function CommandeScreen(props) {
                 <h2>Paiement</h2>
                 <p>
                   <strong>Methode:</strong> {panier.paymentMethod}
-                  
+                  <p> ________________</p>
                   <p >PAIEMENT ACCEPTE</p>
                 </p>
               </div>

@@ -50,8 +50,8 @@ export default function PizzaListScreen(props) {
   return (
     <div>
 
-      <div className="row">
-        <h1>Pizzas</h1>
+      <div className="text-blanc-h">
+        Pizzas <br/>
         <button type="button" className="premier" onClick={createHandler}>
           Ajouter une nouvelle pizza
         </button>
@@ -67,7 +67,7 @@ export default function PizzaListScreen(props) {
       ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
-        <table className="table">
+        <table className="table-history">
           <thead>
             <tr>
               <th>Identifiant</th>

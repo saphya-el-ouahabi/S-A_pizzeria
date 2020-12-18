@@ -19,7 +19,6 @@ export default function PanierScreen(props) {
   }, [dispatch, pizzaId, qty]);
 
   const removeFromPanierHandler = (id) => {
-    // delete action
     dispatch(removeFromPanier(id));
   };
 
@@ -28,7 +27,7 @@ export default function PanierScreen(props) {
   };
   return (
     <div className="row top">
-      <div className="col-2">
+    <div className="col-2-panier">
         <h1>Panier</h1>
         {panierItems.length === 0 ? (
           <MessageBox>

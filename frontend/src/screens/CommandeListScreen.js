@@ -28,7 +28,8 @@ export default function CommandeListScreen(props) {
   };
   return (
     <div>
-      <h1>Commandes</h1>
+    <div className='text-blanc-h'>
+      Commandes</div>      
       {loadingDelete && <LoadingBox></LoadingBox>}
       {errorDelete && <MessageBox variant="danger">{errorDelete}</MessageBox>}
       
@@ -37,8 +38,8 @@ export default function CommandeListScreen(props) {
       ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
-        <table className="table">
-          <thead>
+      <table className="table-history">          
+      <thead>
             <tr>
               <th>ID</th>
               <th>DATE</th>
@@ -47,7 +48,7 @@ export default function CommandeListScreen(props) {
               <th>DELIVERED</th>
               <th>ACTIONS</th>
             </tr>
-          </thead>
+      </thead>
           <tbody>
             {orders.map((order) => (
               <tr key={order._id}>

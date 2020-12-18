@@ -26,7 +26,7 @@ body{
       'main'
       'footer';
   grid-template-columns: 1fr;
-  grid-template-rows: 5rem 1fr 5rem;
+  grid-template-rows: 5rem 1fr 10rem;
   height: 100%;
 }
 
@@ -46,9 +46,25 @@ footer{
   grid-area: footer;
   background-color: rgba(0, 0, 0, 0.623);
   /*background-color: #219063;*/
-  color: white;
+  /*color: white;*/
 } 
-
+.footer-txt{
+  text-align: left;
+  margin-top: 10px;
+  margin-left: 5px;
+  color: white;
+  
+}
+.footer-center{
+  text-align: right;
+  padding-right: 5px;
+  color: coral;
+}
+span{
+  color: coral;
+  font-weight: bold;
+  white-space: nowrap;
+}
 
 /* Common */
 h1{
@@ -142,6 +158,7 @@ button.small {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  color:black;
 }
 .row.center {
   justify-content: center;
@@ -151,17 +168,35 @@ button.small {
 }
 
 /* mise en pages de la col (PizzaScreen) */
-.col-1{
+.col-1-pizza{
   flex: 1 1 25rem;
+  color: white;
+  font-family: 'Grandesa';
+  font-size: 20px;
+  font-style: oblique;
+  
 }
 
-.col-2{
+.col-2-pizza{
   flex: 2 1 26rem;
-  border: 25px solid rgb(123, 123, 123);
+  border: 10px solid rgba(123, 123, 123, 0.678);
+  background-color: rgba(255, 255, 255, 0.705);
+}
+.row-pizza{
+  color : black;
+  font-family:'Grandesa';
 }
 
 .min-30 {
   min-width: 30rem;
+}
+.panier-pizza{
+  border: 0.3rem white solid;
+  background-color: rgba(255, 255, 255, 0.795);
+  border-radius:0.5rem ;
+  margin:1rem;
+  color: black;
+
 }
 
 /* images */
@@ -188,7 +223,7 @@ img.large {
 /* Panier */
 .panier{
   border: 0.3rem white solid;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.795);
   border-radius:0.5rem ;
   margin:1rem;
 }
@@ -203,6 +238,13 @@ img.large {
 
 .prix{
   font-size: 2rem;
+}
+.col-2-panier{
+  border: 0.3rem white solid;
+  background-color: rgba(255, 255, 255, 0.795);
+  border-radius:0.5rem ;
+  margin:1rem;
+
 }
 
 /* Note de la pizza */
@@ -256,8 +298,11 @@ img.large {
 .form label {
   margin: 1rem 0;
 }
-
-
+.nouveauClient{
+  color: white;
+  text-decoration: none;
+  
+}
 
 
 /* Dropdown */
@@ -335,11 +380,66 @@ text-align: center;
 /*background-color: rgba(255, 222, 173, 0.658);*/
 background-color: rgba(0, 0, 0, 0.623);
 }
+.image{
+  text-align: center;
+}
+
 .accueil{
   color: white;
   font-size: 20px;
-  font-family: clarendon-urw,sans-serif;
+  font-family: 'Grandesa';
   text-align: center;
   background-size: 10px;
   background-color: rgba(0, 0, 0, 0.623);
 }
+.titre{
+  font-family:'Grandesa';
+  font-style: italic;
+}
+/*histoire Screen*/
+.maison{
+  color :rgb(189, 122, 96);
+  font-size: 35px;
+}
+.histoire{
+  color: white;
+  font-size: 20px;
+  font-family: 'Grandesa';
+  text-align: center;
+  background-size: 10px;
+  background-color: rgba(0, 0, 0, 0.623);
+}
+.text-blanc{
+  color: white;
+ 
+}
+
+.table-history {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table-history tbody tr:nth-of-type(odd) {
+  background-color: #f4f4f4;
+}
+.table-history tbody tr:nth-of-type(even) {
+  background-color: #f4f4f4a8;
+}
+.table-history td,
+.table-history th {
+  text-align: left;
+  border: 0.1rem solid #e4e4e4;
+  padding: 0.5rem;
+}
+.table-history button {
+  margin: 0 0.2rem;
+}
+.table-history tr{
+  background-color: white;
+}
+.text-blanc-h{
+  color: white;
+  text-align: center;
+  font-family: 'Grandesa';
+  font-size: 40px;
+}
+

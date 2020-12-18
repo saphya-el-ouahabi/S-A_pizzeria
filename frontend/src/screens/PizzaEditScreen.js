@@ -4,7 +4,7 @@ import { detailsPizza , updatePizza } from '../actions/pizza';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { PIZZA_UPDATE_RESET } from '../constants/pizza';
-import Axios from 'axios';
+//import Axios from 'axios';
 
 export default function PizzaEditScreen(props) {
   const pizzaId = props.match.params.id;
@@ -56,12 +56,12 @@ export default function PizzaEditScreen(props) {
       );
   };
 
-  const [loadingUpload, setLoadingUpload] = useState(false);
-  const [errorUpload, setErrorUpload] = useState('');
+/*   const [loadingUpload, setLoadingUpload] = useState(false);
+  const [errorUpload, setErrorUpload] = useState(''); */
 
-  const userConnexion = useSelector((state) => state.userConnexion);
-  const { userInfo } = userConnexion;
-  const uploadFileHandler = async (e) => {
+//  const userConnexion = useSelector((state) => state.userConnexion);
+//  const { userInfo } = userConnexion;
+/*   const uploadFileHandler = async (e) => {
     const file = e.target.files[0];
     const bodyFormData = new FormData();
     bodyFormData.append('image', file);
@@ -80,13 +80,13 @@ export default function PizzaEditScreen(props) {
       setLoadingUpload(false);
     }
   };
-
+ */
 
 
   return (
     <div>
       <form className="form" onSubmit={submitHandler}>
-        <div>
+      <div className='text-blanc'>
           <h1>Modifier une pizza {pizzaId}</h1>
         </div>
         {loadingUpdate && <LoadingBox></LoadingBox>}
@@ -98,7 +98,7 @@ export default function PizzaEditScreen(props) {
           <MessageBox variant="danger">{error}</MessageBox>
         ) : (
           <>
-            <div>
+            <div className='text-blanc'>
               <label htmlFor="nom">Nom</label>
               <input
                 id="nom"
@@ -110,7 +110,7 @@ export default function PizzaEditScreen(props) {
             </div>
 
 
-            <div>
+            <div className='text-blanc'>
               <label htmlFor="prix">Prix</label>
               <input
                 id="prix"
@@ -121,9 +121,8 @@ export default function PizzaEditScreen(props) {
               ></input>
             </div>
 
-
-            <div>
-              <label htmlFor="image">Image</label>
+            <div className='text-blanc'>
+              <label htmlFor="image">Image (la margharita par défaut) </label>
               <input
                 id="image"
                 type="text"
@@ -132,9 +131,9 @@ export default function PizzaEditScreen(props) {
                 onChange={(e) => setImage(e.target.value)}
               ></input>
             </div>
-
-            <div>
-              <label htmlFor="imageFile">Image File</label>
+{/* 
+            <div className='text-blanc'>
+              <label htmlFor="imageFile">Fichier image</label>
               <input
                 type="file"
                 id="imageFile"
@@ -145,10 +144,10 @@ export default function PizzaEditScreen(props) {
               {errorUpload && (
                 <MessageBox variant="danger">{errorUpload}</MessageBox>
               )}
-            </div>
+            </div> */}
             
 
-            <div>
+            <div className='text-blanc'>
               <label htmlFor="description">Description</label>
               <textarea
                 id="description"
@@ -161,7 +160,7 @@ export default function PizzaEditScreen(props) {
             </div>
 
 
-            <div>
+            <div className='text-blanc'>
               <label htmlFor="stock">Nombre de pizza en stock</label>
               <input
                 id="stock"

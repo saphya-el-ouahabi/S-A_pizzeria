@@ -1,34 +1,26 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-//
 import { detailsOrder, deliverOrder } from '../actions/commande';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
-//
 import { COMMANDE_DELIVER_RESET, } from '../constants/commande';
 
 export default function CommandeFinalScreen(props) {
 
-
   const orderId = props.match.params.id;
   const orderDetails = useSelector((state) => state.orderDetails);
   const { order, loading, error } = orderDetails;
-//
+
   const userConnexion = useSelector((state) => state.userConnexion);
   const { userInfo } = userConnexion;
-//
+
   const orderDeliver = useSelector((state) => state.orderDeliver);
   const {
     loading: loadingDeliver,
     error: errorDeliver,
     success: successDeliver,
   } = orderDeliver;
-
-  //const dispatch = useDispatch();
-  //useEffect(() => {
-  //  dispatch(detailsOrder(orderId));
-  //}, [dispatch, orderId]);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -43,7 +35,6 @@ export default function CommandeFinalScreen(props) {
   }, [dispatch,  orderId, successDeliver, order]);
 
 
-  //
   const deliverHandler = () => {
     dispatch(deliverOrder(order._id));
   };
@@ -56,8 +47,9 @@ export default function CommandeFinalScreen(props) {
 
 
     <div>
-      <h1>Récapitulatifs</h1>
-      <h1>Commande : {order._id}</h1>
+      <div className='text-blanc-h'>Récapitulatifs</div>
+      <div className='text-blanc'>
+      <h1>Commande : {order._id}</h1></div>
       <div className="row top">
         <div className="col-2">
           <ul>
@@ -151,9 +143,6 @@ export default function CommandeFinalScreen(props) {
                 </button>
 
 
-
-
-
                 {userInfo.isAdmin && !order.isDelivered && (
                 <li>
                   {loadingDeliver && <LoadingBox></LoadingBox>}
@@ -170,9 +159,6 @@ export default function CommandeFinalScreen(props) {
                 </li>
               )}
 
-
-
-              
 
               </li>
             </ul>

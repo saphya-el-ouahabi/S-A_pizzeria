@@ -16,13 +16,15 @@ export default function CommandeHistoryScreen(props) {
 
   return (
     <div>
-      <h1>Historique des commandes</h1>
-      {loading ? (
+    <div className='text-blanc-h'>
+      Historique des commandes 
+      <br/><br/></div>      
+    {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
-        <table className="table">
+    <table className="table-history"> 
           <thead>
             <tr>
               <th>Numéro de suivi</th>
