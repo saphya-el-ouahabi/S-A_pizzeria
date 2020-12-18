@@ -93,5 +93,39 @@ pizzaRouter.delete(
   })
 );
 
+pizzaRouter.post(
+  '/:id/avis',
+  isAuth,
+  expressAsyncHandler(async (req, res) => {
+    const pizzaId = req.params.id;
+    const pizza = await Pizza.findById(pizzaId);
+    if (pizza) {
+      if (pizza.avis.find((x) => x.nom === req.user.nom)) {
+        return res
+          .status(400)
+          .send({ message: 'Vous avez déjà posté un avis' });
+      }
+      const avis = {
+        nom: req.user.nom,
+        note: Number(req.body.note),
+        comment: req.body.comment,
+      };
+      pizza.avis.push(avis);
+      pizza.numAvis = pizza.avis.length;
+      pizza.note =
+        pizza.avis.reduce((a, c) => c.note + a, 0) /
+        pizza.avis.length;
+      const updatedPizza = await pizza.save();
+      res.status(201).send({
+        message: 'Avis crée',
+        avis: updatedPizza.avis[updatedPizza.avis.length - 1],
+      });
+    } else {
+      res.status(404).send({ message: 'Pizza introuvable' });
+    }
+  })
+);
+
+
 
 export default pizzaRouter;
