@@ -1,40 +1,23 @@
 # S-A_pizzeria
 INFO734
 
-# Amazona ECommerce Website
-![amazona](/template/images/amazona.jpg)
+# Site de gestion de pizzeria
 
-## PLEASE DO NOT SEND PULL REQUEST
-## ALL PRs WILL BE REJECTED UNTIL DECEMBER 2020
+Le projet est que nous avons réalisé a pour but d'être un site de gestion de pizzeria.
+Pour réaliser ce site nous avons utilisé Node.JS, MongoDB, ExpressJS ainsi que React.
 
-# React & Node Tutorial - Full ECommerce in 9 Hours [2021]
+## Website
 
-Welcome to my React and Node tutorial to build a fully-functional e-commerce website exactly like amazon. Open your code editor and follow me for the next hours to build an e-commerce website using MERN stack (MongoDB, ExpressJS, React and Node.JS).
-
-## Demo Website
-
-- 👉 Heroku : [https://newamazona-final.herokuapp.com](https://newamazona-final.herokuapp.com)
-- 👉 AWS : [https://amazona.webacademy.pro](https://amazona.webacademy.pro)
+- 👉 Heroku : https://sapizzeria.herokuapp.com/
 
 
-## You Will Learn
-
-- HTML5 and CSS3: Semantic Elements, CSS Grid, Flexbox
-- React: Components, Props, Events, Hooks, Router, Axios
-- Redux: Store, Reducers, Actions
-- Node & Express: Web API, Body Parser, File Upload, JWT
-- MongoDB: Mongoose, Aggregation
-- Development: ESLint, Babel, Git, Github,
-- Deployment: Heroku
-- Watch React & Node Tutorial
-
-## Run Locally
+## Run localement
 
 ### 1. Clone repo
 
 ```
-$ git clone git@github.com:basir/amazona.git
-$ cd amazona
+$ git clone https://github.com/saphya-el-ouahabi/S-A_pizzeria.git
+$ cd S-A_pizzeria
 ```
 
 ### 2. Setup MongoDB
@@ -42,11 +25,11 @@ $ cd amazona
 - Local MongoDB
   - Install it from [here](https://www.mongodb.com/try/download/community)
   - Create .env file in root folder
-  - Set MONGODB_URL=mongodb://localhost/amazona  
+  - Set MONGODB_URL=mongodb://localhost/sapizzeria  
 - Atlas Cloud MongoDB
   - Create database at [https://cloud.mongodb.com](https://cloud.mongodb.com)
   - Create .env file in root folder
-  - Set MONGODB_URL=mongodb+srv://your-db-connection
+  - Set MONGODB_URI=mongodb+srv://your-db-connection
 
 ### 3. Run Backend
 
@@ -67,18 +50,22 @@ $ npm start
 ### 5. Seed Users and Products
 
 - Run this on chrome: http://localhost:5000/api/users/seed
-- It returns admin email and password
-- Run this on chrome: http://localhost:5000/api/products/seed
-- It creates 6 sample products
+- Cela retourne l'email et le mdp de l'admin
+- Run this on chrome: http://localhost:5000/api/pizzas/seed
+- Cela crée 6 pizzas
+
 ## Le Site :
 lien : https://sapizzeria.herokuapp.com
 
 ### Se connecter --> En mode administrateur:
 * email: sa_pizzeria@gmail.com
 * mot de passe : motdepasse
+--> En mode client : se créer un compte ou utiliser :
+* email : janetteDu74@gmail.com
+* mdp : motdepasse1
 
 ## En local :
-- Run http://localhost:3000/signin
-- Enter admin email and password and click signin
+- Run http://localhost:3000/connexion
+- Entrer l'email de l'admin et son mdp
 
 Projet en collaboration @anais-ferrera
