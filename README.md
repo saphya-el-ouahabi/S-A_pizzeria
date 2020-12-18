@@ -1,7 +1,6 @@
-# S-A_pizzeria
-INFO734
+Projet effectué dans le cadre du cours INFO734
 
-# Site de gestion de pizzeria
+# Site de gestion de pizzeria : S-A_pizzeria
 
 Le projet est que nous avons réalisé a pour but d'être un site de gestion de pizzeria.
 Pour réaliser ce site nous avons utilisé Node.JS, MongoDB, ExpressJS ainsi que React.
