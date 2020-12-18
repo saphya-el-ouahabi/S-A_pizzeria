@@ -1,0 +1,345 @@
+/* base */
+html{ 
+  font-size: 62.5%; 
+  box-sizing: border-box;
+}
+
+body{
+  margin:0;
+  height: 100vh;
+  font-size: 1.6rem;
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: url("image-css/pizza-making.jpg") no-repeat center fixed;
+}
+
+#root{
+  height:100%;
+}
+
+/* Layout */
+.grid-container{
+  display: grid;
+  grid-template-areas:
+      'header'
+      'main'
+      'footer';
+  grid-template-columns: 1fr;
+  grid-template-rows: 5rem 1fr 5rem;
+  height: 100%;
+}
+
+/* on complete le layout */
+header{
+  grid-area: header;
+  background-color: rgba(0, 0, 0, 0.623);
+  /*background-color: #599b81;*/
+}
+
+main{
+  grid-area: main;
+  padding: 1rem;
+}
+
+footer{
+  grid-area: footer;
+  background-color: rgba(0, 0, 0, 0.623);
+  /*background-color: #219063;*/
+  color: white;
+} 
+
+
+/* Common */
+h1{
+  font-size:1.8rem;
+  padding:1rem 0;
+}
+
+h2{
+  font-size:1.5rem;
+  padding:1rem 0;
+  color: green;
+}
+
+a {
+text-decoration: none; /* on enleve le surlignage des liens */
+}
+a:hover {
+  color: green; /* quand la souris passe dessus */
+}
+header a {
+  color: white;
+  padding:1rem;
+}
+a.entreprise{
+  color: white;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.badge{
+  background-color: orange;
+  color: black;
+  border-radius: 50%;
+  padding: 0.2rem 0.7rem;
+  font-size:1.4rem;
+  margin-left:0.2rem;
+}
+/* liste à puces */
+ul{
+  padding:0;
+  margin:0;
+  list-style-type:none;
+}
+li{
+  margin-top: 1rem;
+}
+input,
+select,
+textarea,
+
+/* bouton ajouter au panier*/
+button {
+  padding: 1rem;
+  font-weight: bold;
+  border: 0.1rem green solid;
+  border-radius: 0.5rem;
+  font-size: 1.6rem;
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  background-color: #f8f8f8;
+  cursor: pointer;
+}
+
+input:hover,
+select:hover,
+textarea:hover,
+
+button:hover{
+  border: 0.1rem orange solid;
+  color: green;
+
+}
+button.premier{
+  background-color: rgb(204, 204, 204);
+}
+button.block{
+  width: 100%;
+}
+
+button.small {
+  font-size: 1.2rem;
+}
+
+/* mettre la class row en responsive */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.row.center {
+  justify-content: center;
+}
+.row.top {
+  align-items: flex-start;
+}
+
+/* mise en pages de la col (PizzaScreen) */
+.col-1{
+  flex: 1 1 25rem;
+}
+
+.col-2{
+  flex: 2 1 26rem;
+  border: 25px solid rgb(123, 123, 123);
+}
+
+.min-30 {
+  min-width: 30rem;
+}
+
+/* images */
+img {
+  border-radius: 0.5rem;
+}
+
+img.small {
+  max-width: 5rem;
+  width: 100%;
+}
+
+
+img.medium {
+  max-width: 29rem;
+  width: 100%;
+}
+img.large {
+  width: 100%;
+}
+
+
+
+/* Panier */
+.panier{
+  border: 0.3rem white solid;
+  background-color: white;
+  border-radius:0.5rem ;
+  margin:1rem;
+}
+
+.panier-body{
+  padding: 1rem;
+}
+
+.panier-body > *{
+  margin-bottom: 0.5rem;
+}
+
+.prix{
+  font-size: 2rem;
+}
+
+/* Note de la pizza */
+.note span {
+  color: gold;
+  margin: 0.1rem;
+}
+.note span:last-child {
+  color: black;
+}
+
+/* Gestion stock*/
+.loading {
+  display: block !important;
+}
+
+.success {
+  color: green;
+  font-weight: bold;
+}
+.danger {
+  color: red;
+  font-weight: bold;
+}
+
+.alert {
+  padding: 1rem;
+  border: 0.1rem solid transparent;
+  border-radius: 0.5rem;
+}
+.alert-info {
+  color: #2020a0;
+  background-color: #e0e0ff;
+}
+.alert-danger {
+  color: #a02020;
+  background-color: #ffe0e0;
+}
+
+
+/* Screen de Connexion */
+.form {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+.form > div {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+.form label {
+  margin: 1rem 0;
+}
+
+
+
+
+/* Dropdown */
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+.dropdown-content {
+  position: absolute;
+  display: none;
+  right: 0;
+  min-width: 12rem;
+  padding: 1rem;
+  z-index: 1;
+  background-color: rgb(35, 35, 35);
+  margin: 0;
+  margin-top: 0.4rem;
+  border-radius: 0.5rem;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/* commande etapes */
+.commande-steps > div {
+  border-top: 0.3rem #c0c0c0 solid;
+  color: #c0c0c0;
+  flex: 1;
+  padding: 1rem;
+  font-weight: bold;
+}
+.commande-steps > div.active {
+  border-top-color: #f08000;
+  color: #f08000;
+}
+
+
+
+/* Table des commandes */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table tbody tr:nth-of-type(odd) {
+  background-color: #f4f4f4;
+}
+.table td,
+.table th {
+  text-align: left;
+  border: 0.1rem solid #e4e4e4;
+  padding: 0.5rem;
+}
+.table button {
+  margin: 0 0.2rem;
+}
+
+/* Carousel */
+.carousel {
+  max-width: 100rem;
+  display: block;
+  background-color:#333333;
+  position: absolute; /* postulat de départ */
+  top: 50%; left: 50%; /* à 50%/50% du parent référent */
+  transform: translate(-50%, 0%); /* décalage de 50% de sa propre taille */
+  
+
+}
+/*accueil screen */
+.intro{
+color:white;
+font-size: 40px;
+font-family: 'Grandesa';
+text-align: center;
+/*background-color: rgba(255, 222, 173, 0.658);*/
+background-color: rgba(0, 0, 0, 0.623);
+}
+.accueil{
+  color: white;
+  font-size: 20px;
+  font-family: clarendon-urw,sans-serif;
+  text-align: center;
+  background-size: 10px;
+  background-color: rgba(0, 0, 0, 0.623);
+}
