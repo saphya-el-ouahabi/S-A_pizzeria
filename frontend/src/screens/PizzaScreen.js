@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Note from '../components/Note';
 import { useDispatch, useSelector } from 'react-redux';
-import { detailsPizza } from '../actions/pizza';
+import { createAvis, detailsPizza } from '../actions/pizza';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
+import { PIZZA_AVIS_CREATE_RESET } from '../constants/pizza';
+import { Link } from 'react-router-dom';
 
 export default function PizzaScreen(props) {
     const dispatch = useDispatch();
@@ -14,12 +16,47 @@ export default function PizzaScreen(props) {
     const pizzaDetails = useSelector((state) => state.pizzaDetails);
     const { loading, error, pizza} = pizzaDetails;
   
+
+    const userConnexion = useSelector((state) => state.userConnexion);
+    const { userInfo } = userConnexion;
+  
+
+    const pizzaAvisCreate = useSelector((state) => state.pizzaAvisCreate);
+    const {
+      loading: loadingAvisCreate,
+      error: errorAvisCreate,
+      success: successAvisCreate,
+    } = pizzaAvisCreate;
+  
+    const [note, setNote] = useState(0);
+    const [comment, setComment] = useState('');
+
+
     useEffect(() => {
+
+      if (successAvisCreate) {
+        window.alert('Avis bien ajouté');
+        setNote('');
+        setComment('');
+        dispatch({ type: PIZZA_AVIS_CREATE_RESET });
+      }
+
       dispatch(detailsPizza(pizzaId));
-    }, [dispatch, pizzaId]);
+    }, [dispatch, pizzaId, successAvisCreate]);
 
     const addToPanierHandler = () => {
         props.history.push(`/panier/${pizzaId}?qty=${qty}`);
+      };
+
+    const submitHandler = (e) => {
+        e.preventDefault();
+        if (comment && note) {
+          dispatch(
+            createAvis(pizzaId, { note, comment, nom: userInfo.nom })
+          );
+        } else {
+          alert('Veuillez entrer un commentaire et une note =D ');
+        }
       };
 
     return (
@@ -101,6 +138,83 @@ export default function PizzaScreen(props) {
                         </div>
                       </div>
                     </div>
+
+
+
+                    <div>
+                          <h2 id="avis">Avis</h2>
+                          {pizza.avis.length === 0 && (
+                            <MessageBox>Il n'y a pas encore d'avis </MessageBox>
+                          )}
+                          <ul>
+                            {pizza.avis.map((avis) => (
+                              <li key={avis._id}>
+                                <strong>{avis.nom}</strong>
+                                <Note note={avis.note} caption=" "></Note>
+                                <p>{avis.createdAt.substring(0, 10)}</p>
+                                <p>{avis.comment}</p>
+                              </li>
+                            ))}
+                            <li>
+                              {userInfo ? (
+                                <form className="form" onSubmit={submitHandler}>
+                                  <div>
+                                    <h2>Ecrire un commentaire</h2>
+                                  </div>
+                                  <div>
+                                    <label htmlFor="note">Note</label>
+                                    <select
+                                      id="note"
+                                      value={note}
+                                      onChange={(e) => setNote(e.target.value)}
+                                    >
+                                      <option value="">Selectionner ...</option>
+                                      <option value="1">1- Pas bon </option>
+                                      <option value="2">2- Moyen</option>
+                                      <option value="3">3- Bon </option>
+                                      <option value="4">4- Très bon </option>
+                                      <option value="5">5- Woah ! </option>
+                                    </select>
+                                  </div>
+                                  <div>
+                                    <label htmlFor="comment">Commentaire </label>
+                                    <textarea
+                                      id="comment"
+                                      value={comment}
+                                      onChange={(e) => setComment(e.target.value)}
+                                    ></textarea>
+                                  </div>
+                                  <div>
+                                    <label />
+                                    <button className="primary" type="submit">
+                                      Envoyer
+                                    </button>
+                                  </div>
+                                  <div>
+                                    {loadingAvisCreate && <LoadingBox></LoadingBox>}
+                                    {errorAvisCreate && (
+                                      <MessageBox variant="danger">
+                                        {errorAvisCreate}
+                                      </MessageBox>
+                                    )}
+                                  </div>
+                                </form>
+                              ) : (
+                                <MessageBox>
+                                  Please <Link to="/connexion">Connexion</Link> Ecrire un avis 
+                                </MessageBox>
+                              )}
+                            </li>
+                          </ul>
+                        </div>
+
+
+
+
+
+
+
+
                   </div>
       )}
     </div>
