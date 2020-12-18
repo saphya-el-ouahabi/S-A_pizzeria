@@ -47,7 +47,7 @@ const data = {
         description: 'Sauce tomate, mozzarella, basilic',
         prix: 10,
         numAvis: 5,
-        note: 4.5,
+        note: 5,
         stock: 15,
       },
 
@@ -57,7 +57,7 @@ const data = {
         description: 'Sauce tomate, mozzarella, jambon, champignons',
         prix: 12,
         numAvis: 6,
-        note: 4,
+        note: 5,
         stock: 15,
       },
 
@@ -72,31 +72,31 @@ const data = {
       },
 
       {
-        nom: 'Vegan sauce tomate',
+        nom: 'Suprême Vegan',
         image: '/images/pizza_4.jpg',
         description: 'Sauce tomate, mozzarella, champignons, olives, proteines de soja',
         prix: 12,
         numAvis: 7,
-        note: 4.5,
+        note: 5,
         stock: 15,
       },
 
       {
-        nom: 'Vegan crème ',
+        nom: 'Chicken Vegan',
         image: '/images/pizza_5.jpg',
         description: 'Crème, rapé, avocats, tofu caramélisés',
         prix: 12,
         numAvis: 7,
-        note: 4.5,
+        note: 4,
         stock: 15,
       },
 
       {
-        nom: 'Chocolat',
+        nom: 'Chocolat Extrême',
         image: '/images/pizza_6.jpg',
         description: "Pâte à tartiner sans produit laitier + Topping aux choix (oréos, kinder, hershey's, cookie dough ...) ",
         prix: 9,
-        numAvis: 7,
+        numAvis: 12,
         note: 4,
         stock: 0,
       },
