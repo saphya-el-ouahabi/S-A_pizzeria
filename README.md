@@ -60,7 +60,8 @@ lien : https://sapizzeria.herokuapp.com
 ### Se connecter --> En mode administrateur:
 * email: sa_pizzeria@gmail.com
 * mot de passe : motdepasse
---> En mode client : se créer un compte ou utiliser :
+### Se connecter --> En mode client : 
+Se créer un compte ou utiliser :
 * email : janetteDu74@gmail.com
 * mdp : motdepasse1
 
